@@ -28,7 +28,9 @@ void main() {
 
   vec2 lightmap = texture(colortex1, texcoord).xy;
   if (lightmap == vec2(0.0)) {
-    color.rgb *= vec3(1.0, 0.6, 0.6);
+    if (color.a > 0.72) {
+      color.rgb *= vec3(1.0, 0.6, 0.6);
+    }
     return;
   }
 
