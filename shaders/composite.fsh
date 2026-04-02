@@ -66,6 +66,10 @@ void main() {
     return;
   }
 
+  if (lightmap == vec2(0.0)) {
+    return;
+  }
+
   vec3 ndcPos = vec3(texcoord.xy, depth) * 2.0 - 1.0;
   vec3 viewPos = projectAndDivide(gbufferProjectionInverse, ndcPos);
   vec3 feetPlayerPos = (gbufferModelViewInverse * vec4(viewPos, 1.0)).xyz;
